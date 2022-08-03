@@ -7,7 +7,7 @@ public class KrestNol {
     static int player = 1;
     static String[][] pole = new String[3][3];
     public static void main(String[] args) {
-        System.out.println("\n\t\t\t\tИгра крестики - нолики");
+        System.out.println("\n\t\t\t\tGame TIC TAC TOE");
         int index = 0;
         for(int i = 0; i<3; i++) {
             for(int j = 0; j<3; j++) {
@@ -25,18 +25,18 @@ public class KrestNol {
             hodIgroka(pole);
             vivodPolya(pole);
             if (draw()) {
-                System.out.println("Ничья!");
+                System.out.println("DRAW!");
                 index = 1;
                 break;
             }
         }
         if (index==0)
-            System.out.println("Победил игрок " + player);
+            System.out.println("Winner is player " + player);
 
     }
     public static String[][] hodIgroka(String[][] pole) {
         while (true) {
-            System.out.println("\nИгрок " + player + ", делайте ваш ход: (формат X/O,1..3,1..3)");
+            System.out.println("\nPlayer " + player + ", делайте ваш ход: (формат X/O,1..3,1..3)");
             Scanner scan = new Scanner(System.in);
             String[] line = scan.next().split(",");
             int x = Integer.parseInt(line[1]);
