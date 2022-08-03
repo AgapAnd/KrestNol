@@ -36,7 +36,7 @@ public class KrestNol {
     }
     public static String[][] hodIgroka(String[][] pole) {
         while (true) {
-            System.out.println("\nPlayer " + player + ", делайте ваш ход: (формат X/O,1..3,1..3)");
+            System.out.println("\nPlayer " + player + ", make your move (format: X/O,1..3,1..3)");
             Scanner scan = new Scanner(System.in);
             String[] line = scan.next().split(",");
             int x = Integer.parseInt(line[1]);
@@ -53,18 +53,18 @@ public class KrestNol {
     }
     public static boolean proverkaVvoda(int x, int y, String znak) {
         if ((pole[x-1][y-1].equals("X") || pole[x-1][y-1].equals("O"))) {
-            System.out.println("Это поле уже заполнено, введите другие координаты");
+            System.out.println("This field is already taken, enter another coordinates");
             return false;
         }
         if (znak.equals(predZnak)) {
-            System.out.println("Неправильно введены данные");
+            System.out.println("Wrong sign, enter another");
             return false;
         }
         if ((znak.equals("X")) || (znak.equals("O"))) {
             return true;
         }
         else {
-            System.out.println("Необходимо ввести Х или О");
+            System.out.println("Valid signs are only Х and О");
             return false;
         }
     }
